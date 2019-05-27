@@ -1,0 +1,225 @@
+Version 4.6
+Diagram_Title ""
+Notes1 ""
+Notes2 ""
+Canvas_size 25000 14000
+Canvas_position 1224 1737
+Diagram_offset 0 0
+Hosts_file C:\hosts
+Colours &hFFFFFF& &hFF0000& &hFEEDED& &h0& &hC0FFFF&
+Default_font "MS Sans Serif" 8 False False False False &h0& &hFFFFFF&
+
+Insert_object 1 termpink 1245  4004.5 1 "Kolab Groupware" ! ! 2 1 1 1 !
+Insert_object 2 termyellow 2820  2106.5 3 "All IP Phones and IP Office stuff." ! ! 4 1 1 1 !
+Insert_object 3 termgreen 1215  2992.5 5 "Workstations per floor. Per floor vlan is possible to a max of 17 vlans (97)" ! ! 6 1 1 1 !
+Insert_object 4 termyellow 1245  2092.5 7 ! ! ! 8 1 1 1 !
+Insert_object 5 termyellow 1200  1161.5 9 "Cluster traffic " ! ! 10 1 1 1 !
+Insert_object 6 termpink 2820  3966.5 11 "www.rigo.nl survey.rigo.nl" ! ! 12 1 1 1 !
+Insert_object 7 termgreen 2835  2993.5 13 ! ! ! 14 1 1 1 !
+Insert_object 8 termyellow 2775  1161.5 15 ! ! ! 16 1 1 1 !
+Insert_object 9 termpink 2790  4748.5 17 ! ! ! 18 ! ! 1 !
+Insert_object 10 termgreen 4455  2978.5 19 ! ! ! 20 1 1 1 !
+Insert_object 11 termyellow 4485  1176.5 21 ! ! ! 22 1 1 1 !
+Insert_object 12 "ip telephony router" 11929  4564 23 ! ! ! 24 .5 .5 1 !
+No_Insert_Object 13
+No_Insert_Object 14
+Insert_object 15 "broadband router" 11329  2936 29 ! ! ! 30 .5 .5 1 !
+Insert_object 16 "broadband router" 11359  1811 31 ! ! ! 32 .5 .5 1 !
+Insert_object 17 "directory server" 11721.5  9562.5 33 ! ! ! 34 .5 .5 1 !
+Insert_object 18 "directory server" 13178.5  9592.5 35 ! ! ! 36 .5 .5 1 !
+Insert_object 19 switch 10733  5768.5 37 "switch 24x1Gb+2x10Gbe stacked" ! ! 38 1 1 1 !
+Insert_object 20 switch 9870  6546.5 39 "Switch Dell PoweConnect 24x10Gb+2x10Gbe stacked" ! ! 40 1 1 1 !
+Insert_object 21 switch 7680  7447.5 41 ! ! ! 42 1 1 1 !
+Insert_object 22 switch 6135  7492.5 43 ! ! ! 44 1 1 1 !
+Insert_object 23 switch 12810  6217.5 45 "Zyxel XS1920 switch 12x10Gbe" ! ! 46 1 1 1 !
+No_Insert_Object 24
+Insert_object 25 frontendproc 10424 7845 49 ! ! ! 50 .5 .5 1 !
+Insert_object 26 frontendproc 11689 7845 51 ! ! ! 52 .5 .5 1 !
+Insert_object 27 frontendproc 13084 7845 53 ! ! ! 54 .5 .5 1 !
+Insert_object 28 "terminal server" 10462 8692 55 ! ! ! 56 0.5 0.5 1 ! 
+Insert_object 29 "terminal server" 11722 8692 57 ! ! ! 58 0.5 0.5 1 ! 
+Insert_object 30 "terminal server" 13148 8692 59 ! ! ! 60 0.5 0.5 1 ! 
+Insert_object 31 "wireless transport" 4335 6292 61 ! ! ! 62 .5 .5 1 !
+Insert_object 32 "c firewall" 9476  3574 63 ! ! ! 64 0.5 0.5 1 !
+Insert_object 33 Printer 4035  7609 65 ! ! ! 66 0.5 0.5 1 !
+No_Insert_Object 34
+Insert_object 35 fileserver 9461  4522 69 ! ! ! 70 0.5 0.5 1 !
+Insert_object 36 fileserver 8756  5243.5 71 ! ! ! 72 0.5 0.5 1 !
+Insert_object 37 fileserver 7976  6083.5 73 ! ! ! 74 0.5 0.5 1 !
+Insert_object 38 "soft router" 9546.5  2586.5 75 ! ! ! 76 0.5 0.5 1 !
+No_Insert_Object 39
+Insert_object 40 cloud5 7740  9083.5 77 ! ! ! 78 .5 .5 1 !
+Insert_object 41 workstation 7785  9045 79 ! ! ! 80 0.5 0.5 1 !
+Insert_object 42 cloud5 6360 9090 81 ! ! ! 82 .5 .5 1 !
+Insert_object 43 laptop 6375  9128.5 83 ! ! ! 84 0.5 0.5 1 !
+Insert_object 44 cloud5 5040 9113 85 ! ! ! 86 .5 .5 1 !
+Insert_object 45 phone2 5040  9101 87 ! ! ! 88 0.5 0.5 1 !
+Insert_object 46 "wireless transport" 6120 6244 89 ! ! ! 90 .5 .5 1 !
+Insert_object 47 linknode 5775 10725 ! ! linknode ! ! ! ! ! ! 
+Insert_object 48 cloud5 5250  4612.5 91 ! ! ! 92 .5 .5 1 !
+Insert_object 49 newton 5265  4641.5 93 ! ! ! 94 .5 .5 1 !
+No_Insert_Object 50
+
+Insert_label 1 c ! VLAN50<<crlf>>Portal "MS Sans Serif" 8,25 False False False False &H0 1 flow &HFFFFFF locked
+Insert_label 2 n ! 192.168.50.0/24 ! ! ! ! ! ! ! 1 ip ! !
+Insert_label 3 c ! VLAN100<<crlf>>Voice "MS Sans Serif" 8,25 False False False False &H0 2 flow &HFFFFFF locked
+Insert_label 4 n ! 10.100.100.0/24 ! ! ! ! ! ! ! 2 ip ! !
+Insert_label 5 c ! VLAN80<<crlf>>Workstations "MS Sans Serif" 8,25 False False False False &H0 3 flow &HFFFFFF locked
+Insert_label 6 n ! 10.80.80.0/25 ! ! ! ! ! ! ! 3 ip ! !
+Insert_label 7 c ! "VLAN90<<crlf>>Services" "MS Sans Serif" 8,25 False False False False &H0 4 flow &HFFFFFF locked
+Insert_label 8 n ! 10.0.0.0/24 ! ! ! ! ! ! ! 4 ip ! !
+Insert_label 9 c ! "VLAN140<<crlf>>Storage" "MS Sans Serif" 8,25 False False False False &H0 5 flow &HFFFFFF locked
+Insert_label 10 n ! 172.16.0.0/16 ! ! ! ! ! ! ! 5 ip ! !
+Insert_label 11 c ! VLAN30<<crlf>>Public "MS Sans Serif" 8,25 False False False False &H0 6 flow &HFFFFFF locked
+Insert_label 12 n ! 192.168.30.0/24 ! ! ! ! ! ! ! 6 ip ! !
+Insert_label 13 c ! "VLAN70<<crlf>>WIFI Client" "MS Sans Serif" 8,25 False False False False &H0 7 flow &HFFFFFF locked
+Insert_label 14 n ! 10.70.70.0/25 ! ! ! ! ! ! ! 7 ip ! !
+Insert_label 15 c ! "VLAN150<<crlf>>Cluster" "MS Sans Serif" 8,25 False False False False &H0 8 flow &HFFFFFF locked
+Insert_label 16 n ! 172.24.0.0/16 ! ! ! ! ! ! ! 8 ip ! !
+Insert_label 17 C ! "VLAN99<<crlf>>Native" "MS Sans Serif" 8,25 False False False False &H0 9 flow &HFFFFFF locked
+Insert_label 18 N ! ! ! ! ! ! ! ! ! 9 ip
+Insert_label 19 c ! "VLAN60<<crlf>>VPN Client" "MS Sans Serif" 8,25 False False False False &H0 10 flow &HFFFFFF locked
+Insert_label 20 n ! 10.60.60.0/25 ! ! ! ! ! ! ! 10 ip ! !
+Insert_label 21 c ! VLAN360<<crlf>>MANAGEMENT "MS Sans Serif" 8,25 False False False False &H0 11 flow &HFFFFFF locked
+Insert_label 22 n ! 172.31.0.0/24 ! ! ! ! ! ! ! 11 ip ! !
+Insert_label 23 s ! AVAYA-IP500-A ! ! ! ! ! ! ! 12 object ! !
+Insert_label 24 n ! ! ! ! ! ! ! ! ! 12 ip ! !
+No_Insert_Label 25
+No_Insert_Label 26
+No_Insert_Label 27
+No_Insert_Label 28
+Insert_label 29 s ! ISP-NETFIRST ! ! ! ! ! ! ! 15 object ! !
+Insert_label 30 n ! ! ! ! ! ! ! ! ! 15 ip ! !
+Insert_label 31 s ! ISP-ZIGGO ! ! ! ! ! ! ! 16 object ! !
+Insert_label 32 n ! ! ! ! ! ! ! ! ! 16 ip ! !
+Insert_label 33 s ! DC1 ! ! ! ! ! ! ! 17 object ! !
+Insert_label 34 n ! ! ! ! ! ! ! ! ! 17 ip ! !
+Insert_label 35 s ! DC2 ! ! ! ! ! ! ! 18 object ! !
+Insert_label 36 n ! ! ! ! ! ! ! ! ! 18 ip ! !
+Insert_label 37 s ! DPC-6224-A ! ! ! ! ! ! ! 19 object ! !
+Insert_label 38 n ! ! ! ! ! ! ! ! ! 19 ip ! !
+Insert_label 39 s ! DPC-6224-B ! ! ! ! ! ! ! 20 object ! !
+Insert_label 40 n ! ! ! ! ! ! ! ! ! 20 ip ! !
+Insert_label 41 s ! DPC-6248P-A ! ! ! ! ! ! ! 21 object ! !
+Insert_label 42 n ! ! ! ! ! ! ! ! ! 21 ip ! !
+Insert_label 43 s ! DPC-6248P-B ! ! ! ! ! ! ! 22 object ! !
+Insert_label 44 n ! ! ! ! ! ! ! ! ! 22 ip ! !
+Insert_label 45 s ! XS1920-A ! ! ! ! ! ! ! 23 object ! !
+Insert_label 46 n ! ! ! ! ! ! ! ! ! 23 ip ! !
+No_Insert_Label 47
+No_Insert_Label 48
+Insert_label 49 s ! GIS1 ! ! ! ! ! ! ! 25 object ! !
+Insert_label 50 n ! ! ! ! ! ! ! ! ! 25 ip ! !
+Insert_label 51 s ! EBB1 ! ! ! ! ! ! ! 26 object ! !
+Insert_label 52 n ! ! ! ! ! ! ! ! ! 26 ip ! !
+Insert_label 53 s ! EBB2 ! ! ! ! ! ! ! 27 object ! !
+Insert_label 54 n ! ! ! ! ! ! ! ! ! 27 ip ! !
+Insert_label 55 S ! "terminal server" ! ! ! ! ! ! ! 28 object
+Insert_label 56 N ! ! ! ! ! ! ! ! ! 28 ip
+Insert_label 57 S ! "terminal server" ! ! ! ! ! ! ! 29 object
+Insert_label 58 N ! ! ! ! ! ! ! ! ! 29 ip
+Insert_label 59 S ! "terminal server" ! ! ! ! ! ! ! 30 object
+Insert_label 60 N ! ! ! ! ! ! ! ! ! 30 ip
+Insert_label 61 s ! RIGOWIFI1 ! ! ! ! ! ! ! 31 object ! !
+Insert_label 62 n ! ! ! ! ! ! ! ! ! 31 ip ! !
+Insert_label 63 S ! "c firewall" ! ! ! ! ! ! ! 32 object
+Insert_label 64 N ! ! ! ! ! ! ! ! ! 32 ip
+Insert_label 65 S ! Printer ! ! ! ! ! ! ! 33 object
+Insert_label 66 N ! ! ! ! ! ! ! ! ! 33 ip
+No_Insert_Label 67
+No_Insert_Label 68
+Insert_label 69 S ! fileserver ! ! ! ! ! ! ! 35 object
+Insert_label 70 N ! ! ! ! ! ! ! ! ! 35 ip
+Insert_label 71 S ! fileserver ! ! ! ! ! ! ! 36 object
+Insert_label 72 N ! ! ! ! ! ! ! ! ! 36 ip
+Insert_label 73 S ! fileserver ! ! ! ! ! ! ! 37 object
+Insert_label 74 N ! ! ! ! ! ! ! ! ! 37 ip
+Insert_label 75 S ! "soft router" ! ! ! ! ! ! ! 38 object
+Insert_label 76 N ! ! ! ! ! ! ! ! ! 38 ip
+Insert_label 77 s ! ! ! ! ! ! ! ! ! 40 object ! !
+Insert_label 78 n ! ! ! ! ! ! ! ! ! 40 ip ! !
+Insert_label 79 S ! workstation ! ! ! ! ! ! ! 41 object
+Insert_label 80 N ! ! ! ! ! ! ! ! ! 41 ip
+Insert_label 81 s ! ! ! ! ! ! ! ! ! 42 object ! !
+Insert_label 82 n ! ! ! ! ! ! ! ! ! 42 ip ! !
+Insert_label 83 S ! laptop ! ! ! ! ! ! ! 43 object
+Insert_label 84 N ! ! ! ! ! ! ! ! ! 43 ip
+Insert_label 85 s ! ! ! ! ! ! ! ! ! 44 object ! !
+Insert_label 86 n ! ! ! ! ! ! ! ! ! 44 ip ! !
+Insert_label 87 S ! phone2 ! ! ! ! ! ! ! 45 object
+Insert_label 88 N ! ! ! ! ! ! ! ! ! 45 ip
+Insert_label 89 s ! RIGOWIFI2 ! ! ! ! ! ! ! 46 object ! !
+Insert_label 90 n ! ! ! ! ! ! ! ! ! 46 ip ! !
+Insert_label 91 s ! ! ! ! ! ! ! ! ! 48 object ! !
+Insert_label 92 n ! ! ! ! ! ! ! ! ! 48 ip ! !
+Insert_label 93 s ! android ! ! ! ! ! ! ! 49 object ! !
+Insert_label 94 n ! ! ! ! ! ! ! ! ! 49 ip ! !
+
+Link_object 1 27 23 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 2 26 23 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 3 25 ! 10baseT ! ! ! ! ! ! 0  0
+Link_object 4 25 23 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 5 25 20 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 6 26 20 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 7 27 ! 10baseT ! ! ! ! ! ! 0  0
+Link_object 8 27 20 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 9 20 19 backbone ! ! ! ! ! ! 0 0 0 0
+Link_object 10 25 19 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 11 26 19 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 12 27 ! 10baseT ! ! ! ! ! ! 0  0
+Link_object 13 27 19 10baseT ! ! ! ! ! ! 0 0 0 0
+No_Link_object 14
+Link_object 15 16 35 10baseT ! ! ! ! ! ! 0 0 0 0
+No_link_object 16
+Link_object 17 15 35 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 18 12 19 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 19 35 19 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 20 36 19 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 21 37 19 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 22 35 20 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 23 35 ! 10baseT ! ! ! ! ! ! 0  0
+Link_object 24 36 20 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 25 37 20 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 26 19 23 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 27 20 23 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 28 20 21 backbone ! ! ! ! ! ! 0 0 0 0
+Link_object 29 21 22 backbone ! ! ! ! ! ! 0 0 0 0
+Link_object 30 45 22 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 31 45 21 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 32 43 22 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 33 43 21 10baseT ! ! ! ! ! ! 0 0 0 0
+No_Link_object 34
+No_Link_object 35
+Link_object 36 33 22 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 37 31 22 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 38 15 12 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 39 46 21 10baseT ! ! ! ! ! ! 0 0 0 0
+No_link_object 40
+No_link_object 41
+Link_object 42 47 ! 10baseT ! ! ! ! ! ! 0  0
+Link_object 43 22 41 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 44 21 41 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 45 46 49 10baseT ! ! ! ! ! ! 0 0 0 0
+Link_object 46 31 49 10baseT ! ! ! ! ! ! 0 0 0 0
+No_link_object 47
+
+Define_link "64K LL" 0 &HFF00& 1 2 9 0 ! ! ! ! 
+Define_link "64k ISDN" 0 &HFF& 3 1 9 1 ! ! ! ! 
+Define_link 10baseT 0 &H808080 1 2 9 0 ! ! ! ! 
+Define_link 100baseT 0 &H808080 1 2 9 0 ! ! ! ! 
+Define_link "128K LL" 0 &Hff80ff 1 2 9 0 ! ! ! ! 
+Define_link "256K LL" 0 &Hffff& 1 4 9 0 ! ! ! ! 
+Define_link "512K LL" 0 &H808080 1 5 9 0 ! ! ! ! 
+Define_link "1M LL" 0 &Hc0c0c0 1 6 9 0 ! ! ! ! 
+Define_link "2M LL" 0 &H808080 1 7 9 0 ! ! ! ! 
+Define_link Fibre 0 &H0& 1 1 9 0 ! ! ! ! 
+Define_link Cable 1 &HFF00& 1 12 9 0 ! ! ! ! 
+Define_link ADSL 1 &HFF8000& 1 12 9 0 ! ! ! ! 
+Define_link ATM 1 &HC080FF& 1 12 9 0 ! ! ! ! 
+Define_link "64K LL2" 1 &HFF00& 1 12 9 0 ! ! ! ! 
+Define_link "128K LL2" 1 &Hff80ff 1 14 9 0 ! ! ! ! 
+Define_link "256K LL2" 1 &Hffff& 1 16 9 0 ! ! ! ! 
+Define_link "512K LL2" 1 &H808080 1 18 9 0 ! ! ! ! 
+Define_link "1M LL2" 1 &Hc0c0c0 1 20 9 0 ! ! ! ! 
+Define_link "2M LL2" 1 &H808080 1 22 9 0 ! ! ! ! 
+Define_link backbone 0 &Hc0c0c0 1 3 9 0 ! ! ! ! 
