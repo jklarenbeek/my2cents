@@ -217,3 +217,99 @@ cmd hlx, ixe; cmd dex, iye; cmd bcx, ize;
 
 reg32 th1 { reg16 pc, reg16 sp }
 ```
+
+
+a test to describe bcd (Binary Code Decimal)
+
+```cs
+
+int7 offset; // any integer from -128 to 127, unbounded
+int7(0..10) offset // any integer from 0 to 10, bounded
+int7(U0..10) offset // any integer from 0 to 10, unbounded
+
+
+enum byte extends uint8;
+struct 
+
+http://jgmalcolm.com/z80/variables/bcd.htm
+enum bcd extends uint4(0..9);
+
+// http://jgmalcolm.com/z80/variables/vari.htm
+enum bcd_op extends uint8 {
+    POS_REAL = 0x00,  // positive real number
+    NEG_REAL = 0x80,  // negative real number
+    POS_CMPL = 0x01,  // positive complex number
+    NEG_CMPL = 0x81,  // negative complex number
+    POS_RVCT = 0x02,  // positive real vector
+    NEG_RVCT = 0x82,  // negative real vector
+    POS_CVCT = 0x03,  // positive complex vector
+    NEG_CVCT = 0x83,  // negative complex vector
+    REAL_LST = 0x04,  // real list
+    CMPL_LST = 0x05,  // complex list
+    REAL_MTX = 0x06,  // real matrix
+    CMPL_MTX = 0x07,  // complex matrix
+    REAL_CST = 0x08,  // real constant
+    CMPL_CST = 0x09,  // complex constant
+    EQUATION = 0x0a,
+    TI89_SYSTEM = 0x0b,
+    STRING = 0x0c,
+    GRAPHDB_STANDARD = 0x0d,
+    GRAPHDB_POLAR = 0x0e,
+    GRAPHDB_PARAMETRIC = 0x0f,
+    GRAPHDB_DIFFEQUATION = 0x10,
+    PICTURE = 0x11,
+    PROGRAM = 0x12,
+    CONVERSION_FACTOR = 0x13,
+}
+
+typedef ti89_register byte[11]
+
+struct ti89_var extends ti89_register {
+    
+  function getType():bcd_op {
+    return bcd_op.implicit(this.getUInt8(0))
+  }
+  
+  function isNumber():bool {
+    return (this.getUint16(1) >> 8) >= 0xfb;
+  }
+  
+  function length():uint4(0,9) {
+    return this.getUInt4(1, low);
+  }
+}
+
+struct ti89_num extends ti89_register {
+
+  function isNumber():bool {
+    return (this.getUint16(1) >> 8) >= 0xfb;
+  }
+  
+  function isNegative():bool {
+    return (this.getUint16(1) >> 8) == 0xfb;
+  }
+  function isNegative(bool isneg) {
+      this.setUint16(1, (this.getUInt16(1) & 0x00ff) | (isneg ? 0xfb : 0xfc))
+  }
+  function getExponent() return uint8 {
+    return uint16.toUInt8(this.getUInt16(1), low);
+  }
+  function getMantisa() return bcd[7] {
+  }
+  
+}
+
+int7[] arrayPointer
+
+Jump(addr:sint8 literal value) {
+  emit 0x00000000 sint8:value;
+}
+Jump(addr literal value) {
+  emit 0x00000001 uint16:value
+}
+
+int7[10] arrayPointer = int7[4] { 10,45,3,6 }; <= syntax error
+int7[0..5](0..10) arrayPointer = int7[3] { 4, 5, 18 <= syntax error };
+int7[](0..10) arrayPointer = int7[2] { 3, 24 <= syntax error }; // arrayPointer.capacity = 127
+```
+

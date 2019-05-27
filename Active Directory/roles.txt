@@ -1,0 +1,12 @@
+roles
+	0=administrator
+	1=engineer
+	2=operator
+	3=reviewer
+	4=editor
+	5=vip
+	6=member
+	7=guest
+group
+	user1
+	user2

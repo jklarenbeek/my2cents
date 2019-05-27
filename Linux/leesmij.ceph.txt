@@ -1,0 +1,26 @@
+
+// ## Storage Pools
+ceph-pool create <pool-name> -pgt <pg-size> -pgs <pg-split>
+ceph-pool ls
+ceph-pool delete <pool-name> --yes-i-really-really-mean-it
+ceph-pool rename <pool-name> <new-name>
+
+ceph-pool <pool-name> set <key>=<value> // ceph-pool <pool-name> set replicas=<count> (key == size...?)
+ceph-pool <pool-name> get <key>
+ceph-pool <pool-name> reset <key>
+
+ceph-pool <pool-name> mksnap <snap-name>
+ceph-pool <pool-name> rmsnap <snap-name>
+
+// ## Placement Groups
+ceph-pg dump [--pool <pool-name>] [--stuck <inactive|unclean|stale>] [--threshold <seconds>] [--format <format-name>] // dump statistics for pg in pool.
+ceph-pg map   [[<pg-id>[,<pg-id>]*]|[--pool <pool-name>]]1
+ceph-pg query [[<pg-id>[,<pg-id>]*]|[--pool <pool-name>]]1
+ceph-pg scrub [[<pg-id>[,<pg-id>]*]|[--pool <pool-name>]]1
+ceph-pg mark  [[<pg-id>[,<pg-id>]*]|[--pool <pool-name>]]1 --unfound --lost --revert
+
+// ## Crush Maps
+ceph-crush --get-map -o <output-compiled-crushmap-filename>
+ceph-crush --set-map -i <input-compiled-crushmap-filename>
+ceph-crush -d <input-compiled-crushmap-filename> -o <output-decompiled-crushmap-filename>
+ceph-crush -c <input-decompiled-crushmap-filename> -o <output-compiled-crushmap-filename>
