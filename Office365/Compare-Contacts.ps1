@@ -1,0 +1,1 @@
+﻿Compare-Object $(Get-MailContact -ResultSize Unlimited | Select ExternalEmailAddress) $(Get-DistributionGroupMember NieuwsLeden -ResultSize Unlimited | Select ExternalEmailAddress)
