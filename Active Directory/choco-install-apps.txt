@@ -1,0 +1,20 @@
+choco install chocolateygui firefox googlechrome -y
+choco install github curl putty conemu nssm sysinternals -y
+
+rem problematic / not installed
+choco install github pdfcreator -y
+
+choco install windirstat winmerge qbittorrent filezilla ccleaner ccenhancer -y
+choco install irfanview irfanviewplugins inkscape paint.net vlc vlc-skins -y
+choco install foobar2000 audacity audacity-lame
+choco install pidgin pidgin-otr flashplayerplugin 
+choco install freeplane sumatrapdf pdfcreator -y
+
+
+choco install libreoffice --ia '"ADDLOCAL=ALL" --force -y
+
+
+
+
+
+
