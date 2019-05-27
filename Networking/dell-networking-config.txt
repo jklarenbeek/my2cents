@@ -1,0 +1,257 @@
+console(config)#show running-config
+
+!Current Configuration:
+!System Description "Dell Networking N1548, 6.3.1.11, Linux 3.6.5"
+!System Software Version 6.3.1.11
+!
+configure
+gvrp enable
+vlan 2,10-12,20-22,25,31
+exit
+vlan 2
+name "Untagged VLAN"
+vlan association subnet 192.168.2.0 255.255.255.0
+exit
+vlan 10
+name "RIGONET LAN"
+vlan association subnet 192.168.10.0 255.255.255.0
+exit
+vlan 11
+name "RIGONET STR"
+vlan association subnet 192.168.11.0 255.255.255.0
+exit
+vlan 12
+name "RIGONET CDT"
+vlan association subnet 192.168.12.0 255.255.255.0
+exit
+vlan 20
+name "RIGO LAN"
+vlan association subnet 172.20.0.0 255.255.254.0
+exit
+vlan 21
+name "RIGO STR"
+vlan association subnet 172.21.0.0 255.255.254.0
+exit
+vlan 22
+name "RIGO CDT"
+vlan association subnet 172.22.0.0 255.255.254.0
+exit
+vlan 25
+name "RIGO VOIP"
+exit
+vlan 31
+name "Management"
+vlan association subnet 172.31.0.0 255.255.254.0
+exit
+sntp unicast client enable
+sntp server "0.nl.pool.ntp.org"
+sntp server "2.nl.pool.ntp.org" priority 2
+clock timezone 1 minutes 0
+stack
+member 1 3    ! N1548
+member 2 3    ! N1548
+exit
+ip domain-name "rigo.nl"
+ip name-server "8.8.8.8"
+ip name-server "8.8.4.4"
+logging web-session
+system jumbo mtu 9216
+boot auto-copy-sw
+interface vlan 1 1
+ip address 192.168.1.12 255.255.255.0
+bandwidth 10000
+exit
+interface vlan 2 3
+ip address 192.168.2.12 255.255.255.0
+bandwidth 10000
+exit
+interface vlan 20 4
+ip address 172.20.0.12 255.255.254.0
+bandwidth 10000
+exit
+interface vlan 31 2
+ip address 172.31.0.12 255.255.254.0
+bandwidth 10000
+exit
+ip default-gateway 10.0.0.1
+username "Admin" password 85737a9c4f256e59cf451cfa226092af privilege 15 encrypted
+spanning-tree mode mst
+spanning-tree mst configuration
+name "RIGO"
+revision 1
+instance 1 add vlan 20-22
+instance 2 add vlan 10-12
+instance 3 add vlan 31
+exit
+application install SupportAssist auto-restart start-on-boot
+application install hiveagent start-on-boot
+!
+interface Gi1/0/1
+description "TP-LINK Port 3 LAN"
+green-mode energy-detect
+green-mode eee
+exit
+!
+interface Gi1/0/2
+description "TP-Link Port 5 DMZ"
+exit
+!
+interface Gi1/0/37
+description "MGT Supermicro 65"
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/38
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/39
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/40
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/41
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/42
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/43
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/44
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/45
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/46
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/47
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi1/0/48
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Te1/0/1
+switchport access vlan 20
+exit
+!
+interface Te1/0/2
+switchport access vlan 20
+exit
+!
+interface Te1/0/4
+channel-group 1 mode on
+exit
+!
+interface Gi2/0/1
+description "TP-Link Port 4 "
+exit
+!
+interface Gi2/0/2
+description "TP-Link Port 5 DMZ Redundant"
+exit
+!
+interface Gi2/0/37
+description "MGT Supermicro 66"
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/38
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/39
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/40
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/41
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/42
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/43
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/44
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/45
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/46
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/47
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Gi2/0/48
+gvrp enable
+switchport access vlan 31
+exit
+!
+interface Te2/0/4
+channel-group 1 mode on
+exit
+!
+interface port-channel 1
+description "Uplink to ZyXEL 10Gbe Switch"
+gvrp enable
+switchport mode general
+switchport general acceptable-frame-type tagged-only
+switchport general allowed vlan add 10-12,20-22,31
+switchport general allowed vlan remove 1
+exit
+snmp-server engineid local 800002a203f48e3841bdc1
+snmp-server community "f056dff814d5c6c5" rw ipaddress 10.0.0.12
+exit
+
+console(config)#

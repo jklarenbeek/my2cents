@@ -1,0 +1,83 @@
+
+
+### SETUP MANAGEMENT PORTS FOR iLo, iDRAC, ETC ####
+### Allow igress and egress untagged traffic
+## note: this rule is the same as
+##	 switchport mode access
+##	 switchport access vlan 31
+
+N1500(config)#interface range gi1/0/1-12,gi2/0/1-12
+N1500(config-if)#switchport mode general
+N1500(config-if)#switchport general allowed vlan add 31 untagged
+N1500(config-if)#switchport general pvid 31
+N1500(config-if)#end
+
+## SETUP AVAYA VOIP PORTS
+
+N1500#config
+N1500(config)#interface gi1/0/41
+N1500(config-if-Gi1/0/41)#switchport mode general
+N1500(config-if-Gi1/0/41)#switchport general allowed vlan add 100 untagged
+N1500(config-if-Gi1/0/41)#switchport general pvid 100
+N1500(config-if-Gi1/0/41)#end
+
+N1500(config)#interface range gi1/0/37-40
+N1500(config-if)#switchport mode general
+N1500(config-if)#switchport general allowed vlan add 100 tagged
+N1500(config-if)#switchport general allowed vlan add 42 untagged
+N1500(config-if)#switchport general pvid 42
+N1500(config-if)#end
+
+### SETUP GATEWAY TO ROUTERS
+##
+
+N1500#config
+N1500(config)#interface gi1/0/46
+N1500(config-if-Gi1/0/46)#switchport mode general
+N1500(config-if-Gi1/0/46)#switchport general allowed vlan add 22 untagged
+N1500(config-if-Gi1/0/46)#switchport general pvid 22
+
+### SETUP DEFAULT ALL SERVERS
+## vlan 1 is the pit, since no switchport is assigned to it.
+
+N1500(config)#interface range gi1/0/13-36,gi2/0/13-36
+N1500(config-if)#switchport mode general
+N1500(config-if)#switchport general allowed vlan add 108 tagged
+N1500(config-if)#switchport general pvid 1
+
+### SETUP DEFAULTS EBB SERVER
+#
+N1500#config
+N1500(config)#interface range gi1/0/13-14,gi2/0/13-14
+N1500(config-if)#switchport general allowed vlan add 22 untagged
+N1500(config-if)#switchport general pvid 22
+N1500(config-if)#end
+
+### SETUP DEFAULTS HV2 SERVER
+#
+N1500#config
+N1500(config)#interface range gi1/0/15-16,gi2/0/15-16
+N1500(config-if)#switchport mode general
+N1500(config-if)#switchport general allowed vlan add 22 tagged
+N1500(config-if)#switchport general allowed vlan add 42 tagged
+N1500(config-if)#switchport general allowed vlan add 31 untagged
+N1500(config-if)#switchport general allowed vlan add 64 tagged
+N1500(config-if)#switchport general allowed vlan add 31 tagged
+N1500(config-if)#switchport general allowed vlan add 108 tagged
+N1500(config-if)#switchport general pvid 31
+N1500(config-if)#end
+
+### SETUP DEFAULTS HV3 SERVER
+#
+N1500#config
+N1500(config)#interface range gi1/0/17-18,gi2/0/17-18
+N1500(config-if)#switchport mode general
+N1500(config-if)#switchport general allowed vlan add 108 tagged
+N1500(config-if)#switchport general allowed vlan add 22 untagged
+N1500(config-if)#switchport general pvid 22
+N1500(config-if)#end
+
+
+
+
+

@@ -1,0 +1,27 @@
+
+
+hv1 gi1/0/13-14 switchport access vlan 22
+hv2 gi1/0/15-16 switchport mode general; pvid 108; allowed vlan 22,31,42,64,100,108 tagged; allowed vlan remove 1
+hv3 gi1/0/17-18 switchport mode general; pvid 22; allowed vlan 22,31,42,64,100,108 tagged; allowed vlan remove 1
+
+rdsh2 gi1/0/19-20 switchport access vlan 108
+rdsh1 gi1/0/21-22 switchport access vlan 108
+
+gis1 gi1/0/23-24 switchport mode general; pvid 22, allowed vlan 22,108 tagged; allowed vlan remove 1
+
+info gi1/0/25-26 switchport access vlan 22
+backup gi1/0/27-28 switchport access vlan 22
+
+*voipsw-achter gi1/0/37-39 switchport mode general; pvid 22, allowed vlan 22,31,42,100,108; allowed vlan remove 1
+avaya gi1/0/41 switchport access vlan 100
+
+zyxel te1/0/3 channel-group 1 mode active; switchport mode trunk; allowed vlan 20,108
+
+
+sonciwall gi1/0/45 switchport access vlan 22
+
+ICT3.47 gi1/0/43 switchport mode general; pvid 108; allowed vlan 22,31,42,64,100,108 tagged; allowed vlan remove 1
+ICT3.38 gi3/0/6 switchport access vlan 42
+
+
+
